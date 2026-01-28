@@ -1,0 +1,27 @@
+<div class="position-relative">
+  <input
+    type="text"
+    class="form-control pe-5"
+    [placeholder]="placeholder"
+    [value]="displayValue"
+    readonly
+    (click)="openPicker()"
+  />
+
+  <span
+    class="position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
+    style="cursor: pointer;"
+    (click)="openPicker()"
+  >
+    <i class="bi bi-calendar-event"></i>
+  </span>
+
+  <input
+    #realDate
+    type="date"
+    class="position-absolute top-0 start-0 w-100 h-100"
+    style="opacity: 0; pointer-events: none"
+    (change)="dateChanged($event)"
+  />
+
+</div>

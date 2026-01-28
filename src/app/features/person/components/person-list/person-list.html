@@ -1,0 +1,38 @@
+ <div class="card rounded-0 shadow-sm">
+    <div class="card-body p-0">
+
+      <table class="table table-hover table-bordered mb-0">
+        <thead class="table-primary">
+          <tr class="text-center">
+            <th scope="col"style="width: 60px;">#</th>
+            <th scope="col">ชื่อ - สกุล</th>
+            <th scope="col">ที่อยู่</th>
+            <th scope="col">วันเกิด</th>
+            <th scope="col">อายุ</th>
+            <th scope="col" style="width: 120px;">
+              Action
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (p of data; track p.id; let i = $index){
+            <tr class="text-center">
+              <th scope="row" class="text-end">{{ i+1 }}</th>
+              <td>{{ p | fullname }}</td>
+              <td>{{ p.address }}</td>
+              <td>{{ p.birthDate | date:'dd/MM/yyyy'}}</td>
+              <td>{{ p.birthDate | age}}</td>
+              <td>
+                <button class="btn btn-primary btn-sm" (click)="view.emit(p)">
+                  View
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>

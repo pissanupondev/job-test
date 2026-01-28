@@ -1,0 +1,22 @@
+<div class="container mt-4 mb-4">
+
+  <div class="text-end mb-3">
+    <button class="btn btn-primary" (click)="openAdd()">
+      ADD
+    </button>
+  </div>
+
+  <app-person-list
+    [data]="store.persons()"
+    (view)="openView($event.id)"
+  />
+
+  @if (dialogOpen()) {
+  <app-person-dialog
+    [mode]="dialogMode()"
+    [person]="store.selectedPerson()"
+    (save)="save($event)"
+    (close)="close()"
+  />
+  }
+</div>

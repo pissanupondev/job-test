@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "374f2c2f-9c1a-4633-b25d-66b7e59c56fb"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -25,6 +26,9 @@
               }
             ],
             "styles": [
+              "node_modules/flatpickr/dist/flatpickr.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
